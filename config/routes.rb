@@ -1,6 +1,28 @@
 Pollster::Application.routes.draw do
   
   
+  get "questions/new"
+
+  get "questions/create"
+
+  get "questions/edit"
+
+  get "questions/show"
+
+  get "questions/destroy"
+
+  get "polls/index"
+
+  get "polls/new"
+
+  get "polls/create"
+
+  get "polls/edit"
+
+  get "polls/update"
+
+  get "polls/show"
+
 end  
 #  root :to => 'index.html.erb'
   # The priority is based upon order of creation:
