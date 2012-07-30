@@ -1,6 +1,6 @@
 Pollster::Application.routes.draw do
   
-  root :to => 'index.html.erb'
+#  root :to => 'index.html.erb'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
