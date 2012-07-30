@@ -3,4 +3,7 @@ class Question < ActiveRecord::Base
   
   belongs_to :poll
   has_many :answers
+  
+  validates :body, :presence => :true
+  accepts_nested_attributes_for :answers
 end

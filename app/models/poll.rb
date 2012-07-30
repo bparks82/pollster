@@ -4,5 +4,10 @@ class Poll < ActiveRecord::Base
   has_one :poll_edit_link
   has_one :poll_share_link
   has_many :questions
-  has_many :answers, :through => :question
+  has_many :answers#, :through => :questions
+  
+  validates :name, :presence => :true
+  validates :description, :presence => :true
+  
+  accepts_nested_attributes_for :questions, :answers
 end
