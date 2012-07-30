@@ -1,6 +1,12 @@
 Pollster::Application.routes.draw do
   
   
+  get "answers/new"
+
+  get "answers/create"
+
+  get "answers/show"
+
   get "questions/new"
 
   get "questions/create"
