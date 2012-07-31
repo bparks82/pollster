@@ -9,5 +9,6 @@ class Poll < ActiveRecord::Base
   validates :name, :presence => :true
   validates :description, :presence => :true
   
+  attr_accessible :questions_attributes
   accepts_nested_attributes_for :questions, :answers
 end

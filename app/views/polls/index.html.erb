@@ -1,2 +1,16 @@
-<h1>Polls#index</h1>
-<p>Find me in app/views/polls/index.html.erb</p>
+<h1>Welcome to Anonypoll</h1>
+
+<%= link_to 'Create a Poll', new_poll_path %>
+
+<ul>
+  <% @polls.each do |poll| %>
+    <li>
+	  <%= link_to poll.name, poll_path(poll) %><br />
+      <%= link_to poll.description, poll_path(poll) %>
+      <%= button_to "Take Poll", question_path(poll.questions), :method => :get, :class => "button_to" %>
+	</li>
+</ul>
+<% end %>
+
+
+  <%#=#polls= render 'poll', :collection => @polls%>

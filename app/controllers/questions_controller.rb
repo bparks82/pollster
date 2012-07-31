@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  
   def new
   end
 
@@ -9,6 +10,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @question = Question.find(params[:id])
   end
 
   def destroy
