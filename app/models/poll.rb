@@ -1,14 +1,24 @@
+require 'securerandom'
+
+
 class Poll < ActiveRecord::Base
-  attr_accessible :description, :name
+  attr_accessible :description, :name, :editlink, :sharelink
   
-  has_one :poll_edit_link
-  has_one :poll_share_link
   has_many :questions
   has_many :answers, :through => :questions
   
   validates :name, :presence => :true
   validates :description, :presence => :true
   
-  attr_accessible :questions_attributes
+  before_save :create_edit_link
+  
+  attr_accessible :questions
   accepts_nested_attributes_for :questions, :answers
+
+
+  def create_edit_link
+    self.editlink = SecureRandom.urlsafe_base64(6)   
+  end
+
+
 end

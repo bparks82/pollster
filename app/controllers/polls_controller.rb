@@ -24,7 +24,8 @@ class PollsController < ApplicationController
 
   def update
     @poll = Poll.find(params[:id])
-    @poll.update_attributes(params[:poll])
+    @poll.update_attributes(params[:question_attributes])
+    redirect_to polls_path
   end
 
   def show

@@ -2,7 +2,10 @@ Pollster::Application.routes.draw do
   
   root :to => 'polls#index'
   
-  resources :polls, :questions#, :answers
+  resources :polls
+  resources :questions#, :answers
+  
+  #match '/:editlink' => 'polls#show', :as => :poll_show
   
 end  
 #  root :to => 'index.html.erb'

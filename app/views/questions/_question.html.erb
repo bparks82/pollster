@@ -7,17 +7,7 @@
   </p>
   
   <p>
-  	<%= f.label :body %><br />
-  	<%= f.text_field :body %>  
-  </p>
-  
-  <p>
-  	<%= f.label :body %><br />
-  	<%= f.text_field :body %>  
-  </p>
-  
-  <p>
-  	<%= f.submit "Add Questions to Poll"%>
+  	<%= f.submit "Add Questions to Poll", :method => :put %>
   </p>
 
 <% end %>

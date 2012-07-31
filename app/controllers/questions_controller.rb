@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(params[:question])
     if @question.save
-      redirect_to poll_path(@poll)
+      redirect_to poll_path(@question.poll)#(@poll.editlink)
     else
       render :new
     end

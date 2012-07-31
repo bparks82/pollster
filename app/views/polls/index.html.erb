@@ -7,7 +7,7 @@
     <li>
 	  <%= link_to poll.name, poll_path(poll) %><br />
       <%= link_to poll.description, poll_path(poll) %>
-      <%= button_to "Take Poll", question_path(poll.questions), :method => :get, :class => "button_to" %>
+      <%= button_to "Take Poll", poll_path(poll), :method => :get, :class => "button_to" %>
 	</li>
 </ul>
 <% end %>

@@ -2,6 +2,11 @@
 <%=@poll.name %><br />
 
 <b>Poll desription:</b>
-<%=@poll.description %>
+<%=@poll.description %><br />
 
-<%= render :partial => 'questions/question' %>
+
+<b>Poll questions:</b><br />
+
+<%@poll.questions.each do |question|%>
+<%= question.body %><br />
+<% end %>
