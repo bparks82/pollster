@@ -4,22 +4,30 @@ class PollsController < ApplicationController
   end
 
   def new
-    @poll = Poll.new
-    3.times do 
-      @question = Question.new  
-    end
+    @poll = Poll.new  
   end
 
   def create
-    @poll = Poll.new(params)
+    @poll = Poll.new(params[:poll])
+    
+    if @poll.save
+      redirect_to edit_poll_path(@poll)
+    else
+      render :new
+    end
   end
 
   def edit
+    @poll = Poll.find(params[:id])
+    #redirect_to poll_path(@poll)
   end
 
   def update
+    @poll = Poll.find(params[:id])
+    @poll.update_attributes(params[:poll])
   end
 
   def show
+    @poll = Poll.find(params[:id])
   end
 end

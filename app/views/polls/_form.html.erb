@@ -13,14 +13,6 @@
   	<%= f.label :description %><br />
   	<%= f.text_field :description %>  
   </p>
-  
-  <%= f.fields_for :questions do |q| %>
-    <p>
-      <%= q.label :body %><br />
-    	<%= q.text_field :body %>
-  	</p>
-  <% end %>
-
   <p>
   	<%= f.submit "Create"%>
   </p>

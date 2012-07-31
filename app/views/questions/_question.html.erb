@@ -1,17 +1,23 @@
-<%= form_for(@poll.questions.new, :html => {:multipart => true}) do |f| %>
+<%= form_for(@poll.questions.new) do |f| %>
   <%= f.hidden_field :poll_id%>
 
   <p>	
-	<%= f.label :question1 %><br />
-	<%= f.text_field :body %>
+  	<%= f.label :body %><br />
+  	<%= f.text_field :body %>
   </p>
+  
   <p>
-	<%= f.label :question2 %><br />
-	<%= f.text_field :body %>  
+  	<%= f.label :body %><br />
+  	<%= f.text_field :body %>  
   </p>
+  
   <p>
-	<%= f.label :question3 %><br />
-	<%= f.text_field :body %>  
+  	<%= f.label :body %><br />
+  	<%= f.text_field :body %>  
+  </p>
+  
+  <p>
+  	<%= f.submit "Add Questions to Poll"%>
   </p>
 
 <% end %>

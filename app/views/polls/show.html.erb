@@ -1,2 +1,7 @@
-<h1>Polls#show</h1>
-<p>Find me in app/views/polls/show.html.erb</p>
+<b>Poll name:</b>
+<%=@poll.name %><br />
+
+<b>Poll desription:</b>
+<%=@poll.description %>
+
+<%= render :partial => 'questions/question' %>
