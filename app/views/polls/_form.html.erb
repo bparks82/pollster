@@ -1,0 +1,27 @@
+<%= form_for(@poll) do |f| %>
+  <ul>
+  <% @poll.errors.full_messages.each do |error| %>
+	<li><%= error %></li>
+	<% end %>
+  </ul>
+
+  <p>
+  	<%= f.label :name %><br />
+  	<%= f.text_field :name %>
+  </p>
+  <p>
+  	<%= f.label :description %><br />
+  	<%= f.text_field :description %>  
+  </p>
+  
+  <%= f.fields_for :questions do |q| %>
+    <p>
+      <%= q.label :body %><br />
+    	<%= q.text_field :body %>
+  	</p>
+  <% end %>
+
+  <p>
+  	<%= f.submit "Create"%>
+  </p>
+<% end %>

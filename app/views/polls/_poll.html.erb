@@ -1,0 +1,7 @@
+<ul>
+    <li>
+	  <%= link_to poll.name, poll_show_path(poll.editlink) %><br />
+      <%= link_to poll.description, poll_show_path(poll.editlink) %>
+      <%= button_to "Take Poll", root_path, :method => :get, :class => "button_to" %>
+	</li>
+</ul>
