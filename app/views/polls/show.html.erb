@@ -10,3 +10,5 @@
 <%@poll.questions.each do |question|%>
 <%= question.body %><br />
 <% end %>
+
+<%=link_to "add another question", edit_poll_path(@poll)%>

@@ -1,7 +1,8 @@
 class QuestionsController < ApplicationController
   
   def new
-    @question = Question.new
+    @poll = poll.new
+    @questions = @poll.questions.build
   end
 
   def create
